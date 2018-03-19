@@ -7,16 +7,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var HomeComponent = (function () {
-    function HomeComponent() {
+var MessageService = (function () {
+    function MessageService() {
+        this.messages = [];
     }
-    HomeComponent = __decorate([
-        core_1.Component({
-            selector: "app-root",
-            templateUrl: "../../views/pages/home/index.html"
-        })
-    ], HomeComponent);
-    return HomeComponent;
+    MessageService.prototype.add = function (message) {
+        this.messages.push(message);
+    };
+    MessageService.prototype.clear = function () {
+        this.messages = [];
+    };
+    MessageService = __decorate([
+        core_1.Injectable()
+    ], MessageService);
+    return MessageService;
 }());
-exports.HomeComponent = HomeComponent;
-//# sourceMappingURL=home.component.js.map
+exports.MessageService = MessageService;
+//# sourceMappingURL=message.service.js.map

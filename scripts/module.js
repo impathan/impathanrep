@@ -8,19 +8,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var platform_browser_1 = require("@angular/platform-browser");
 var core_1 = require("@angular/core");
+var layout_component_1 = require("./layout.component");
 var home_component_1 = require("./pages/home/home.component");
+var binding_component_1 = require("./pages/product/binding.component");
+var product_listing_component_1 = require("./pages/product/product.listing.component");
+var posts_component_1 = require("./pages/post/posts.component");
+var product_component_1 = require("./pages/product/product.component");
 var forms_1 = require("@angular/forms");
-var MainModule = /** @class */ (function () {
+var app_routing_1 = require("./shared/app.routing");
+var post_service_1 = require("./services/post.service");
+var message_service_1 = require("./services/message.service");
+var http_1 = require("@angular/common/http");
+//import { InMemoryDataService }  from './services/in-memory';
+var MainModule = (function () {
     function MainModule() {
     }
     MainModule = __decorate([
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
-                forms_1.FormsModule
+                forms_1.FormsModule,
+                app_routing_1.routing,
+                http_1.HttpClientModule,
             ],
-            declarations: [home_component_1.HomeComponent],
-            bootstrap: [home_component_1.HomeComponent]
+            providers: [post_service_1.PostService, message_service_1.MessageService],
+            declarations: [layout_component_1.LayoutComponent, home_component_1.HomeComponent, binding_component_1.BindingComponent, product_listing_component_1.ProductListingComponent, product_component_1.ProductComponent, posts_component_1.PostListingComponent],
+            bootstrap: [layout_component_1.LayoutComponent]
         })
     ], MainModule);
     return MainModule;

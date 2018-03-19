@@ -2,27 +2,38 @@
 <html>
 <head>
     <title></title>
-	<meta charset="utf-8" />
-</head>
-<base href="/">
- <!-- 1. Load libraries -->
-<!-- Polyfill(s) for older browsers -->
-<script src="node_modules/core-js/client/shim.min.js"></script>
-<script src="node_modules/zone.js/dist/zone.js"></script>
-<script src="node_modules/reflect-metadata/Reflect.js"></script>
-<script src="node_modules/systemjs/dist/system.src.js"></script>
-<!-- 2. Configure SystemJS -->
-<script src="systemjs.config.js"></script>
-<script>
-    System.config({
-        "defaultJSExtensions": true
-    });
+    <meta charset="utf-8" />
+    
+    <link href="/contents/website.css" rel="stylesheet" />
+    <base href="/">
+    <!-- 1. Load libraries -->
+   <!-- Polyfill(s) for older browsers -->
+   <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+   <script src="node_modules/systemjs/dist/system.src.js"></script>
+   <!-- 2. Configure SystemJS -->
+   <script src="systemjs.config.js"></script>
+   <script>
+       System.config({
+        packages: {
+    '': {
+      defaultExtension: 'js'
+    }
+  }
+});
 
-    System.import('application').catch(function (err) { console.error(err); });
-</script>
+       System.import('application').catch(function (err) { console.error(err); });
+   </script>
+   
+</head>
 <body>
+    <div class="col-md-12">
+    <div class="row">
     <app-root>
         Loading...
       </app-root>
+    </div>
+</div>
 </body>
 </html>

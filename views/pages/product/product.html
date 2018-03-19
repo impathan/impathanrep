@@ -1,0 +1,20 @@
+<h2>Products Listing</h2>
+
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-6">
+                <div class="box box-info">
+                        <div class="box-header with-border">
+                          <h3 class="box-title">Input Output</h3>
+                        </div>
+                        <input type="text" [(ngModel)]="inputVariable" class="form-control" />
+
+                        <span class="small">Output Text</span>
+                      {{outputVariable}}   
+                      </div>
+        </div>
+        <div class="col-md-6">
+            <product-listing [inputVariable]="inputVariable" (output)="outputEvent($event)"></product-listing>
+        </div>
+    </div>
+</div>

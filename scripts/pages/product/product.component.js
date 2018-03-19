@@ -7,16 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var HomeComponent = (function () {
-    function HomeComponent() {
+var ProductComponent = (function () {
+    function ProductComponent() {
+        this.inputVariable = '';
+        this.outputVariable = '';
     }
-    HomeComponent = __decorate([
+    ProductComponent.prototype.outputEvent = function (outputVariable) {
+        this.outputVariable = outputVariable;
+    };
+    ProductComponent = __decorate([
         core_1.Component({
             selector: "app-root",
-            templateUrl: "../../views/pages/home/index.html"
+            templateUrl: "../../views/pages/product/product.html"
         })
-    ], HomeComponent);
-    return HomeComponent;
+    ], ProductComponent);
+    return ProductComponent;
 }());
-exports.HomeComponent = HomeComponent;
-//# sourceMappingURL=home.component.js.map
+exports.ProductComponent = ProductComponent;
+//# sourceMappingURL=product.component.js.map
